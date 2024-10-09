@@ -1,0 +1,131 @@
+Tasks
+
+Overall goal
+	- 3 solid bosses, solid intro to the story, good tutorial to get the players set up
+	- 2 optional bosses, one secret story related boss and one superboss that is really well hidden
+	- 4 world zones, plus a superboss related zone that introduces different gameplay for the time being
+	- 4 party members in total
+	- 15 to 20 solid REM-nants for the party, as well as solid enemies
+	- 2 weapons with meaningful choices to make
+	- 3 world zones should be meaningfully interconnected, no railroading the player
+
+Gameplay
+	- Audio Manager
+		- Create an audio manager that controls playing sounds
+		- Needs to handle multiple channels (sfx, music, audio, ambient, master volume)
+		- Everything in the game should be able to call this to play audio
+		- Should have multiple channels for the audio to play from and not overpower each other
+	- Data Manager
+		- Stores all of the enemies data, game calls this when enemies are summoned in battle
+		- Also stores all status combinations
+		- Anything that is associated with enemy data will go here
+		- Reads from a json file to load up the enemies attacks and stats
+		- Stores data for all attacks
+		- Before the party manager, there is this guy, where it gets the numbers
+	- Save Manager
+		- Should handle saving and loading the game, supports up to 9 saves?
+		- Game should call this when saving and loading, store things like progress, position, flags, etc
+	- Party Manager
+		- Should handle storing all of the data associated with each character in the party
+		- Out of party group should hold all party members unavailable at the moment, data should be preserved
+		- In party group handles current party, called upon entering battles to establish the teams
+		- Party manager should update whenever equipment is changed
+		- Party manager stores the equipment and money for the party, works with the save manager
+	- Input Manager
+		- Should parse inputs for the game, when inputs are remapped, remaps the input in game for the player
+		- Should save player preferences in the Save Manager
+	- Scene Manager
+		- Should load up each scene, including player position and such
+	- Event Manager
+		- This handles each of the events in the game, when player's progress past them, it sets the proper flags
+		- Stores progression, think the buttons from Novam Rem
+	-End Managers-
+
+	- Title Screen
+		- New Game button starts up the game
+		- Load Game button loads a saved game
+		- Settings button lets you change settings in the game, stored in the Save Manager
+		- Credits button takes you to a screen showing the credits for the game, linking socials
+	
+	- Real World Screens
+		- Player needs to move around
+		- Player needs to be able to talk to characters
+		- Characters should have internal dialogue available to them that progresses, sets own flags
+		- Player should be able to walk into triggers that start events
+		- Player can run, uses stamina bar
+		- Player can jump to Babel
+
+		- NPCs can wander around, or follow set paths
+
+	- Social Aspect
+		- Player should be able to interact with party members after key events
+		- These events should improve relationship between characters, maybe unlock new combination attacks
+		- Events should provide characterization for the people
+
+	- Babel Overworld Screens
+		- Everything from real world minus babel jump
+		- Player can grapple with strings to cross gaps
+		- Player can back attack enemies (or some form of that)
+		- Player can rest at bonfires
+		- Player can be attacked by enemies
+		- Player can hide
+
+		- NPCs can attack player to initiate battle
+		
+	- Babel Battle Scenes
+		- Every character has an action bar that fills up to allow them to act
+		- Every character has Health, players have magic, everyone has stance
+		- Every character reacts to statuses in bullet box or out
+
+		- Players get a menu that shows what actions can be taken on their turn
+			- Attack command
+			- REM-nant command where they can summon from a list of REM-nants to attack
+			- Wait command where they can stall their action if another character has an action available (also guards)
+			- Pass command where they switch to paired party member (also guards)
+			- Run command in random encounters to flee an enemy
+			- Situation commands which appear when an enemy is staggered, or when a unique event has occurred
+		- Players have a bullet board that they can move around in to dodge attacks
+		- Players can dash to avoid attacks
+		- Players can parry certain attacks/enemies
+		- Players can interact with different areas in the bullet board for different effects
+		- Player can pause the game with a pause menu
+			- Players can inspect all status effects, each party member, etc while this is up
+			- Press resume button to continue the battle
+		- Player can die and be revived
+		- Player can improve REM-nants by completing battle challenges
+
+		- Enemy has a bullet hell attack that they apply to the board
+		- Enemies can coordinate attacks together
+		- Enemies telegraph their attacks with icons
+		- Enemies can die
+		- Enemies can react to the battlefield based on different circumstances
+
+	- Menu
+		- Menu should have party button to inspect the characters, heal
+		- Menu should have equipment button that lets players change out gear
+		- Menu should have REM-nant button that lets players swap and observe REM-nants
+		- Menu should have a Settings button to change settings
+		- Menu should have a Relationships button to observe player relationships
+		- Menu should have a current objective show up on screen
+		- Menu should have a System button for saving, loading, and quitting to title screen
+
+	- Other systems go here
+
+Art
+	- Blake
+		- develop character sheets
+		- finalize design
+		- create normal and Harvest render
+		- create text box render
+		- create player movement render
+		- create Reaper movement render
+		- create Reaper battle render
+		- animate move and battle renders
+		- create reaper dungeon 1 battle render
+	- this goes for all other characters I want to show up in this chapter
+
+Music
+	- 
+		
+	
+	

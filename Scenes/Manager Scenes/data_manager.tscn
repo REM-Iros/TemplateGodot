@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy7nyl5j6fyib"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/DataManager.gd" id="1_y2ers"]
+
+[node name="DataManager" type="Node"]
+script = ExtResource("1_y2ers")

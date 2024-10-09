@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4giyjoboq8o5"]
+
+[ext_resource type="PackedScene" uid="uid://cf7x1hongdrcq" path="res://Scenes/Manager Scenes/audio_manager.tscn" id="1_6dphx"]
+[ext_resource type="PackedScene" uid="uid://dkwb4mvnrcvgb" path="res://Scenes/Manager Scenes/event_manager.tscn" id="2_oukqi"]
+[ext_resource type="PackedScene" uid="uid://dy7nyl5j6fyib" path="res://Scenes/Manager Scenes/data_manager.tscn" id="3_7cmvr"]
+[ext_resource type="PackedScene" uid="uid://q4rrtqfuu441" path="res://Scenes/Manager Scenes/input_manager.tscn" id="4_ce841"]
+[ext_resource type="PackedScene" uid="uid://yr0yth7ivgt0" path="res://Scenes/Manager Scenes/save_manager.tscn" id="6_i220f"]
+[ext_resource type="PackedScene" uid="uid://dlnqmpryvcyn0" path="res://Scenes/Manager Scenes/scene_manager.tscn" id="7_8b3va"]
+
+[node name="Root" type="Node"]
+
+[node name="CurrentScene" type="Node" parent="."]
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="AudioManager" parent="Managers" instance=ExtResource("1_6dphx")]
+
+[node name="DataManager" parent="Managers" node_paths=PackedStringArray("save_manager") instance=ExtResource("3_7cmvr")]
+save_manager = NodePath("../SaveManager")
+
+[node name="EventManager" parent="Managers" instance=ExtResource("2_oukqi")]
+
+[node name="InputManager" parent="Managers" instance=ExtResource("4_ce841")]
+
+[node name="SaveManager" parent="Managers" node_paths=PackedStringArray("data_manager") instance=ExtResource("6_i220f")]
+data_manager = NodePath("../DataManager")
+
+[node name="SceneManager" parent="Managers" node_paths=PackedStringArray("parent_node") instance=ExtResource("7_8b3va")]
+parent_node = NodePath("../../CurrentScene")
+main_menu_path = "res://Scenes/Main Menu Scenes/Main Menu.tscn"

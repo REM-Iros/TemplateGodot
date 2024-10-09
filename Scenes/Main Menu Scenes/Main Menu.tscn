@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsofmjal7iwrj"]
+
+[ext_resource type="Script" path="res://Scripts/Main Scenes/Menu Scene/main_menu.gd" id="1_rtnqp"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtnqp")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+offset_right = 96.0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Start"
+
+[node name="LoadButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Load"
+
+[node name="OptionsButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Menu/StartButton" to="." method="_on_start_button_pressed"]
